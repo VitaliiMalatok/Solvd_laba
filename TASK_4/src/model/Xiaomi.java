@@ -1,6 +1,8 @@
 package model;
 
-public class Xiaomi extends Phone{
+import java.util.Objects;
+
+public class Xiaomi extends Phone {
     private int price;
 
     public Xiaomi(String processor, String battery, int price) {
@@ -14,8 +16,21 @@ public class Xiaomi extends Phone{
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Xiaomi xiaomi = (Xiaomi) o;
+        return price == xiaomi.price;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(price);
+    }
+
+    @Override
     public String toString() {
-        return super.toString()  +
+        return super.toString() +
                 ", price=" + price;
     }
 }

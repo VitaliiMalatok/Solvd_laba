@@ -1,6 +1,8 @@
 package model;
 
-public class Samsung extends Phone{
+import java.util.Objects;
+
+public class Samsung extends Phone {
     private int weight;
 
     public Samsung(String processor, String battery, int weight) {
@@ -14,8 +16,21 @@ public class Samsung extends Phone{
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Samsung)) return false;
+        Samsung samsung = (Samsung) o;
+        return weight == samsung.weight;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(weight);
+    }
+
+    @Override
     public String toString() {
-        return super.toString()  +
+        return super.toString() +
                 ", weight=" + weight;
     }
 }
