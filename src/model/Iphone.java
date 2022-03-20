@@ -7,11 +7,19 @@ import java.util.Objects;
 
 public final class Iphone extends Phone implements IBalance, INetworkType {
     final String IPHONE = "Iphone";
-    private String color;
+    private static String color;
 
     public Iphone(String processor, String battery, String color) {
         super(processor, battery);
         this.color = color;
+    }
+
+    static {
+        System.out.println("Hello Iphone");
+    }
+
+    public static void getUserName(String firstName, String secondName) {
+        System.out.println(firstName + secondName);
     }
 
     @Override
