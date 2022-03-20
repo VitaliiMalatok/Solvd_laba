@@ -14,7 +14,7 @@ public abstract class Phone {
 
     public abstract void call(String person);
 
-    public void sendMessage(String person) {
+    public final void sendMessage(String person) {
         Scanner in = new Scanner(System.in);
         String massage = in.next();
         System.out.println(person + ">>>" + "send a message: " + massage);

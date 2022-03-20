@@ -5,7 +5,8 @@ import service.INetworkType;
 
 import java.util.Objects;
 
-public class Iphone extends Phone implements IBalance, INetworkType {
+public final class Iphone extends Phone implements IBalance, INetworkType {
+    final String IPHONE = "Iphone";
     private String color;
 
     public Iphone(String processor, String battery, String color) {
@@ -44,6 +45,6 @@ public class Iphone extends Phone implements IBalance, INetworkType {
 
     @Override
     public void getNetworkType() {
-        System.out.println("It's 5G network");
+        System.out.println("It's 5G network use in " + IPHONE);
     }
 }
