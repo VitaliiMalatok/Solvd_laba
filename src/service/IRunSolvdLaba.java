@@ -1,5 +1,5 @@
 package service;
 
-public interface ISolvdLaba {
+public interface IRunSolvdLaba {
     void runProject();
 }

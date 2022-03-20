@@ -1,8 +1,10 @@
 package model;
 
+import service.IChargingTime;
+
 import java.util.Objects;
 
-public class Samsung extends Phone {
+public class Samsung extends Phone implements IChargingTime {
     private int weight;
 
     public Samsung(String processor, String battery, int weight) {
@@ -32,5 +34,10 @@ public class Samsung extends Phone {
     public String toString() {
         return super.toString() +
                 ", weight=" + weight;
+    }
+
+    @Override
+    public void getChargingTime(int timeOfHours) {
+        System.out.println("Charging time is: " + timeOfHours + "hours");
     }
 }

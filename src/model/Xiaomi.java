@@ -1,8 +1,11 @@
 package model;
 
+import service.IRam;
+import service.IScreenSize;
+
 import java.util.Objects;
 
-public class Xiaomi extends Phone {
+public class Xiaomi extends Phone implements IRam, IScreenSize {
     private int price;
 
     public Xiaomi(String processor, String battery, int price) {
@@ -32,5 +35,15 @@ public class Xiaomi extends Phone {
     public String toString() {
         return super.toString() +
                 ", price=" + price;
+    }
+
+    @Override
+    public void getIRam() {
+        System.out.println("RAM of phone is 1024Mb");
+    }
+
+    @Override
+    public void getIScreenSize() {
+        System.out.println("Size of screen is 5'");
     }
 }
