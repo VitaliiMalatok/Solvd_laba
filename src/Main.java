@@ -1,9 +1,9 @@
-import service.ISolvdLaba;
-import service.impl.SolvdLabaImpl;
+import service.IRunSolvdLaba;
+import service.impl.RunSolvdLabaImpl;
 
 class Main {
     public static void main(String[] args) {
-        ISolvdLaba solvdLaba = new SolvdLabaImpl();
+        IRunSolvdLaba solvdLaba = new RunSolvdLabaImpl();
         solvdLaba.runProject();
     }
 }
