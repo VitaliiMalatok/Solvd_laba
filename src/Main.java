@@ -1,9 +1,9 @@
-import service.HomeTaskFours;
-import service.impl.HomeTaskFoursImpl;
+import service.ISolvdLaba;
+import service.impl.SolvdLabaImpl;
 
 class Main {
     public static void main(String[] args) {
-        HomeTaskFours homeTaskFours = new HomeTaskFoursImpl();
-        homeTaskFours.runHomeTaskFour();
+        ISolvdLaba solvdLaba = new SolvdLabaImpl();
+        solvdLaba.runProject();
     }
 }

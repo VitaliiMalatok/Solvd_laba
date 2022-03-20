@@ -4,11 +4,12 @@ import model.Iphone;
 import model.Phone;
 import model.Samsung;
 import model.Xiaomi;
-import service.HomeTaskFours;
+import service.ISolvdLaba;
 
-public class HomeTaskFoursImpl implements HomeTaskFours {
+
+public class SolvdLabaImpl implements ISolvdLaba {
     @Override
-    public void runHomeTaskFour() {
+    public void runProject() {
         Phone iphone = new Iphone("SiliconLab", "Li-on", "Blue");
         Phone samsung = new Samsung("Maxim", "TracoPower", 125);
         Phone xiaomi = new Xiaomi("TexasInstr", "Li-pool", 230);
