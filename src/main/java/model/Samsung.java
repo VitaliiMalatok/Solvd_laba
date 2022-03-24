@@ -1,10 +1,14 @@
 package model;
 
+import exception.SamsungCallException;
+import exception.SamsungWightException;
 import service.IChargingTime;
 
 import java.util.Objects;
 
 public class Samsung extends Phone implements IChargingTime {
+    private static final String DEFAULT_USER_NAME = "Vitali";
+    private static final int DEFAULT_WEIGHT = 5;
     private int weight;
 
     public Samsung(String processor, String battery, int weight) {
@@ -12,8 +16,20 @@ public class Samsung extends Phone implements IChargingTime {
         this.weight = weight;
     }
 
+    public int getWeight() throws SamsungWightException {
+        if (weight <= DEFAULT_WEIGHT) {
+            throw new SamsungWightException("Please inter correct weight. This weight = " + weight + " is must be a positive number");
+        }
+        return weight;
+    }
+
     @Override
-    public void call(String person) {
+    public void call(String person) throws SamsungCallException {
+        if (person != DEFAULT_USER_NAME) {
+            throw new SamsungCallException("Dear user this name: " +
+                    person + " cannot be used when calling. Default name user: " +
+                    DEFAULT_USER_NAME);
+        }
         System.out.println("there is a call from Samsung" + ">>>" + person);
     }
 

@@ -1,12 +1,17 @@
 package model;
 
+import exception.IphoneCallException;
+import exception.IphoneColorException;
+import exception.SamsungCallException;
 import service.IBalance;
 import service.INetworkType;
 
 import java.util.Objects;
 
 public final class Iphone extends Phone implements IBalance, INetworkType {
-    final String IPHONE = "Iphone";
+    private static final String DEFAULT_USER_NAME = "Vitali";
+    private static final String COLOR_OF_PHONE = "red";
+    private final String IPHONE = "Iphone";
     private static String color;
 
     public Iphone(String processor, String battery, String color) {
@@ -18,12 +23,26 @@ public final class Iphone extends Phone implements IBalance, INetworkType {
         System.out.println("Hello Iphone");
     }
 
+    public static String getColor() throws IphoneColorException {
+        if (color != COLOR_OF_PHONE) {
+            throw new IphoneColorException("This color is not true: " +
+                    COLOR_OF_PHONE +
+                    " Please chose default color");
+        }
+        return color;
+    }
+
     public static void getUserName(String firstName, String secondName) {
         System.out.println(firstName + secondName);
     }
 
     @Override
-    public void call(String person) {
+    public void call(String person) throws IphoneCallException {
+        if (person != DEFAULT_USER_NAME) {
+            throw new IphoneCallException("Dear user this name: " +
+                    person + " cannot be used when calling. Default name user: " +
+                    DEFAULT_USER_NAME);
+        }
         System.out.println("there is a call from Iphone" + ">>>" + person);
     }
 

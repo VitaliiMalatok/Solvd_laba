@@ -1,5 +1,8 @@
 package model;
 
+import exception.IphoneCallException;
+import exception.SamsungCallException;
+
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -12,7 +15,7 @@ public abstract class Phone {
         this.battery = battery;
     }
 
-    public abstract void call(String person);
+    public abstract void call(String person) throws SamsungCallException, IphoneCallException;
 
     public final void sendMessage(String person) {
         Scanner in = new Scanner(System.in);
