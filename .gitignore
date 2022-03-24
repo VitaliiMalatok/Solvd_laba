@@ -13,7 +13,7 @@
 # Package Files #
 /out
 *.idea
-*.jar
+
 *.war
 *.nar
 *.ear
