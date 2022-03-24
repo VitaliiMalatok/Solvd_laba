@@ -18,7 +18,8 @@ public class Samsung extends Phone implements IChargingTime {
 
     public int getWeight() throws SamsungWightException {
         if (weight <= DEFAULT_WEIGHT) {
-            throw new SamsungWightException("Please inter correct weight. This weight = " + weight + " is must be a positive number");
+            throw new SamsungWightException("Please inter correct weight. This weight = " +
+                    weight + " is must be a positive number");
         }
         return weight;
     }

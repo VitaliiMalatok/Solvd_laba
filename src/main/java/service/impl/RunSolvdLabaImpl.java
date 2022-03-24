@@ -63,7 +63,6 @@ public class RunSolvdLabaImpl implements IRunSolvdLaba {
             e.getMessage();
             e.printStackTrace();
         }
-
     }
 }
 

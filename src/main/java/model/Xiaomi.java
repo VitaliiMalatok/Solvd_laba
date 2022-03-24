@@ -17,8 +17,8 @@ public class Xiaomi extends Phone implements IRam, IScreenSize {
 
     public int getPrice() throws XiaomiPriceException {
         if (price > DEFAULT_PRICE) {
-            throw new XiaomiPriceException("Please inter correct price. This price = "
-                    + price + " is must be a very height");
+            throw new XiaomiPriceException("Please inter correct price. This price = " +
+                    price + " is must be a very height");
         }
         return price;
     }
