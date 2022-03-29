@@ -4,10 +4,13 @@ import com.solvd.laba.exception.IphoneCallException;
 import com.solvd.laba.exception.IphoneColorException;
 import com.solvd.laba.service.IBalance;
 import com.solvd.laba.service.INetworkType;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
 
 public final class Iphone extends Phone implements IBalance, INetworkType {
+    private static final Logger LOGGER = LogManager.getLogger(Iphone.class);
     private static final String DEFAULT_USER_NAME = "Vitali";
     private static final String COLOR_OF_PHONE = "red";
     private final String IPHONE = "Iphone";
@@ -16,6 +19,14 @@ public final class Iphone extends Phone implements IBalance, INetworkType {
     public Iphone(String processor, String battery, String color) {
         super(processor, battery);
         this.color = color;
+    }
+
+    public Iphone() {
+        super();
+    }
+
+    public void setColor(String color) {
+        Iphone.color = color;
     }
 
     static {
@@ -32,7 +43,7 @@ public final class Iphone extends Phone implements IBalance, INetworkType {
     }
 
     public static void getUserName(String firstName, String secondName) {
-        System.out.println(firstName + secondName);
+        LOGGER.info(firstName + secondName);
     }
 
     @Override
@@ -42,12 +53,17 @@ public final class Iphone extends Phone implements IBalance, INetworkType {
                     person + " cannot be used when calling. Default name user: " +
                     DEFAULT_USER_NAME);
         }
-        System.out.println("there is a call from Iphone" + ">>>" + person);
+        LOGGER.info("there is a call from Iphone" + ">>>" + person);
     }
 
     @Override
     public void getBalance(int balance) {
-        System.out.println("Iphone balance is: " + balance + "$");
+        LOGGER.info("Iphone balance is: " + balance + "$");
+    }
+
+    @Override
+    public void getNetworkType() {
+        LOGGER.info("It's 5G network use in " + IPHONE);
     }
 
     @Override
@@ -67,10 +83,5 @@ public final class Iphone extends Phone implements IBalance, INetworkType {
     public String toString() {
         return super.toString() +
                 ", color='" + color + '\'';
-    }
-
-    @Override
-    public void getNetworkType() {
-        System.out.println("It's 5G network use in " + IPHONE);
     }
 }

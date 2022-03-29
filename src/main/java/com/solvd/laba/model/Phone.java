@@ -2,11 +2,14 @@ package com.solvd.laba.model;
 
 import com.solvd.laba.exception.IphoneCallException;
 import com.solvd.laba.exception.SamsungCallException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
 import java.util.Scanner;
 
 public abstract class Phone {
+    private static final Logger LOGGER = LogManager.getLogger(Iphone.class);
     private String processor;
     private String battery;
 
@@ -15,12 +18,23 @@ public abstract class Phone {
         this.battery = battery;
     }
 
+    public Phone() {
+    }
+
+    public void setProcessor(String processor) {
+        this.processor = processor;
+    }
+
+    public void setBattery(String battery) {
+        this.battery = battery;
+    }
+
     public abstract void call(String person) throws SamsungCallException, IphoneCallException;
 
     public final void sendMessage(String person) {
         Scanner in = new Scanner(System.in);
         String massage = in.next();
-        System.out.println(person + ">>>" + "send a message: " + massage);
+        LOGGER.info(person + ">>>" + "send a message: " + massage);
     }
 
     @Override

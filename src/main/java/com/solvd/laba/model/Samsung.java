@@ -3,10 +3,13 @@ package com.solvd.laba.model;
 import com.solvd.laba.exception.SamsungCallException;
 import com.solvd.laba.exception.SamsungWightException;
 import com.solvd.laba.service.IChargingTime;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
 
 public class Samsung extends Phone implements IChargingTime {
+    private static final Logger LOGGER = LogManager.getLogger(Samsung.class);
     private static final String DEFAULT_USER_NAME = "Vitali";
     private static final int DEFAULT_WEIGHT = 5;
     private int weight;
@@ -31,7 +34,12 @@ public class Samsung extends Phone implements IChargingTime {
                     person + " cannot be used when calling. Default name user: " +
                     DEFAULT_USER_NAME);
         }
-        System.out.println("there is a call from Samsung" + ">>>" + person);
+        LOGGER.info("there is a call from Samsung" + ">>>" + person);
+    }
+
+    @Override
+    public void getChargingTime(int timeOfHours) {
+        LOGGER.info("Charging time is: " + timeOfHours + "hours");
     }
 
     @Override
@@ -51,10 +59,5 @@ public class Samsung extends Phone implements IChargingTime {
     public String toString() {
         return super.toString() +
                 ", weight=" + weight;
-    }
-
-    @Override
-    public void getChargingTime(int timeOfHours) {
-        System.out.println("Charging time is: " + timeOfHours + "hours");
     }
 }

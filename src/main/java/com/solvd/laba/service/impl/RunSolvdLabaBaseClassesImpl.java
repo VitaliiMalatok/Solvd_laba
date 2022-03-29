@@ -1,12 +1,13 @@
 package com.solvd.laba.service.impl;
 
-import com.solvd.laba.exception.*;
 import com.solvd.laba.model.Iphone;
 import com.solvd.laba.model.Samsung;
 import com.solvd.laba.model.Xiaomi;
-import com.solvd.laba.service.IRunSolvdLaba;
+import com.solvd.laba.service.IRunSolvdLabaBaseClasses;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-public class RunSolvdLabaImpl implements IRunSolvdLaba {
+public class RunSolvdLabaBaseClassesImpl implements IRunSolvdLabaBaseClasses {
 
     private static final int BALANCE = 250;
     private static final int TIME_OF_HOURS = 5;
@@ -16,15 +17,14 @@ public class RunSolvdLabaImpl implements IRunSolvdLaba {
     private static final String SECOND_NAME = "Molotok";
     private static final String PERSON = "Alina";
     private static final String PERSON_NAME = "Polina";
+    private static final Logger LOGGER = LogManager.getLogger(RunSolvdLabaBaseClassesImpl.class);
 
     @Override
-    public void runProject() {
+    public void runProjectBaseClasses() {
         Iphone iphone = new Iphone("SiliconLab", "Li-on", "Blue");
         Samsung samsung = new Samsung("Maxim", "TracoPower", WEIGHT);
         Xiaomi xiaomi = new Xiaomi("TexasInstr", "Li-pool", PRICE);
-        System.out.println(iphone + "\n" +
-                samsung + "\n" +
-                xiaomi);
+        System.out.println(iphone + "\n" + samsung + "\n" + xiaomi);
         samsung.sendMessage(PERSON);
         xiaomi.sendMessage(PERSON_NAME);
         iphone.getBalance(BALANCE);
@@ -33,36 +33,6 @@ public class RunSolvdLabaImpl implements IRunSolvdLaba {
         xiaomi.getIRam();
         xiaomi.getIScreenSize();
         Iphone.getUserName(FIRST_NAME, SECOND_NAME);
-        try {
-            iphone.call(FIRST_NAME);
-        } catch (IphoneCallException e) {
-            e.getMessage();
-            e.printStackTrace();
-        }
-        try {
-            xiaomi.getPrice();
-        } catch (XiaomiPriceException e) {
-            e.getMessage();
-            e.printStackTrace();
-        }
-        try {
-            samsung.getWeight();
-        } catch (SamsungWightException e) {
-            e.getMessage();
-            e.printStackTrace();
-        }
-        try {
-            samsung.call(FIRST_NAME);
-        } catch (SamsungCallException e) {
-            e.getMessage();
-            e.printStackTrace();
-        }
-        try {
-            Iphone.getColor();
-        } catch (IphoneColorException e) {
-            e.getMessage();
-            e.printStackTrace();
-        }
     }
 }
 
