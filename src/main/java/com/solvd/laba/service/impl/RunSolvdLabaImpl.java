@@ -1,10 +1,10 @@
-package service.impl;
+package com.solvd.laba.service.impl;
 
-import exception.*;
-import model.Iphone;
-import model.Samsung;
-import model.Xiaomi;
-import service.IRunSolvdLaba;
+import com.solvd.laba.exception.*;
+import com.solvd.laba.model.Iphone;
+import com.solvd.laba.model.Samsung;
+import com.solvd.laba.model.Xiaomi;
+import com.solvd.laba.service.IRunSolvdLaba;
 
 public class RunSolvdLabaImpl implements IRunSolvdLaba {
 

@@ -1,10 +1,9 @@
-package model;
+package com.solvd.laba.model;
 
-import exception.IphoneCallException;
-import exception.IphoneColorException;
-import exception.SamsungCallException;
-import service.IBalance;
-import service.INetworkType;
+import com.solvd.laba.exception.IphoneCallException;
+import com.solvd.laba.exception.IphoneColorException;
+import com.solvd.laba.service.IBalance;
+import com.solvd.laba.service.INetworkType;
 
 import java.util.Objects;
 

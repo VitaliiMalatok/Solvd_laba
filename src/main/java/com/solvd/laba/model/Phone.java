@@ -1,7 +1,7 @@
-package model;
+package com.solvd.laba.model;
 
-import exception.IphoneCallException;
-import exception.SamsungCallException;
+import com.solvd.laba.exception.IphoneCallException;
+import com.solvd.laba.exception.SamsungCallException;
 
 import java.util.Objects;
 import java.util.Scanner;

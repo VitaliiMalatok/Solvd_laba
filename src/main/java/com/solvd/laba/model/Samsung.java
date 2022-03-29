@@ -1,8 +1,8 @@
-package model;
+package com.solvd.laba.model;
 
-import exception.SamsungCallException;
-import exception.SamsungWightException;
-import service.IChargingTime;
+import com.solvd.laba.exception.SamsungCallException;
+import com.solvd.laba.exception.SamsungWightException;
+import com.solvd.laba.service.IChargingTime;
 
 import java.util.Objects;
 

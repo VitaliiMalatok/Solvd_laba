@@ -1,8 +1,8 @@
-package model;
+package com.solvd.laba.model;
 
-import exception.XiaomiPriceException;
-import service.IRam;
-import service.IScreenSize;
+import com.solvd.laba.exception.XiaomiPriceException;
+import com.solvd.laba.service.IRam;
+import com.solvd.laba.service.IScreenSize;
 
 import java.util.Objects;
 
