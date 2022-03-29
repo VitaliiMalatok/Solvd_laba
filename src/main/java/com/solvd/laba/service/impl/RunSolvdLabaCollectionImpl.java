@@ -7,6 +7,7 @@ import com.solvd.laba.service.IRunSolvdLabaCollection;
 import java.util.*;
 
 public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
+    public static final String ADULT = "Adult: ";
     private static final int AGE_MAX = 18;
     private static final int COUNT_OF_PERSON = 20;
     private static final String FIRST_NAME = "Vitali";
@@ -15,6 +16,10 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
     public static final int MIN_AGE = 15;
     public static final int BOUND = 9999;
     public static final int COUNT_OF_IPHONE = 10;
+    public static final String INFANT = "Infant: ";
+    public static final String BATTERY_NAME = "TracoPower";
+    public static final String PROCESSOR_NAME = "Intel";
+    public static final String COLOR_ID = "Color ID: ";
     private Random random = new Random();
 
     @Override
@@ -29,9 +34,9 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
         List<Iphone> iphoneList = new LinkedList<>();
         for (int i = 0; i < COUNT_OF_IPHONE; i++) {
             Iphone iphone = new Iphone();
-            iphone.setBattery("TracoPower" + random.nextInt(BOUND));
-            iphone.setProcessor("Intel" + random.nextInt(BOUND));
-            iphone.setColor("Color ID: " + random.nextInt(BOUND));
+            iphone.setBattery(BATTERY_NAME + random.nextInt(BOUND));
+            iphone.setProcessor(PROCESSOR_NAME + random.nextInt(BOUND));
+            iphone.setColor(COLOR_ID + random.nextInt(BOUND));
             iphoneList.add(iphone);
         }
         return iphoneList;
@@ -56,9 +61,9 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
     private void printPerson(List<Person> personList) {
         for (Person person : personList) {
             if (person.getAge() >= RunSolvdLabaCollectionImpl.AGE_MAX) {
-                System.out.println("Adult: " + person);
+                System.out.println(ADULT + person);
             } else {
-                System.out.println("Infant: " + person);
+                System.out.println(INFANT + person);
             }
         }
     }
