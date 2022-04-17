@@ -40,7 +40,7 @@ public class RunSolvdLabaExceptionImpl implements IRunSolvdLabaException {
             LOGGER.error(e.getMessage(), e);
         }
         try {
-            Iphone.getColor();
+            iphone.getColor();
         } catch (IphoneColorException e) {
             LOGGER.error(e.getMessage(), e);
         }

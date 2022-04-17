@@ -9,12 +9,12 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
 
-public final class Iphone extends Phone implements IBalance, INetworkType {
+public class Iphone extends Phone implements IBalance, INetworkType {
     private static final Logger LOGGER = LogManager.getLogger(Iphone.class);
     private static final String DEFAULT_USER_NAME = "Vitali";
     private static final String COLOR_OF_PHONE = "red";
     private final String IPHONE = "Iphone";
-    private static String color;
+    private String color;
 
     public Iphone(String processor, String battery, String color) {
         super(processor, battery);
@@ -26,14 +26,11 @@ public final class Iphone extends Phone implements IBalance, INetworkType {
     }
 
     public void setColor(String color) {
-        Iphone.color = color;
+        this.color = color;
     }
 
-    static {
-        System.out.println("Hello Iphone");
-    }
 
-    public static String getColor() throws IphoneColorException {
+    public String getColor() throws IphoneColorException {
         if (color != COLOR_OF_PHONE) {
             throw new IphoneColorException("This color is not true: " +
                     COLOR_OF_PHONE +
