@@ -10,17 +10,19 @@ import java.util.*;
 public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
     private static final String ADULT = "Adult: ";
     private static final int AGE_MAX = 18;
-    private static final int COUNT_OF_PERSON = 20;
+    private static final int COUNT_OF_PERSON = 10;
     private static final String FIRST_NAME = "Vitali";
     private static final String SECOND_NAME = "Molotok";
     private static final int MAX_AGE = 30;
     private static final int MIN_AGE = 15;
-    private static final int BOUND = 9999;
-    private static final int COUNT_OF_IPHONE = 5;
+    private static final int BOUND = 10;
+    private static final int COUNT_OF_IPHONE = 10;
     private static final String INFANT = "Infant: ";
-    private static final String BATTERY_NAME = "TracoPower";
     private static final String PROCESSOR_NAME = "Intel";
     private static final String COLOR_ID = "Color ID: ";
+    private static final String XIAOMI = "Xiaomi";
+    private static final String SAMSUNG = "Samsung";
+    private static final String IPHONE = "Iphone";
     private Random random = new Random();
     private static final Logger LOGGER = LogManager.getLogger(RunSolvdLabaCollectionImpl.class);
 
@@ -29,16 +31,28 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
     public void runSolvdLabaCollection() {
         List<Person> personList = createPersonList();
         List<Iphone> iphoneList = createIphoneList();
-        Map<Phone, Integer> samsungIntegerMap = createSamsungMap();
-        printSamsung(samsungIntegerMap);
+        Map<Phone, Integer> samsungMap = createSamsungMap();
+        Set<Phone> xiaomiList = createXiaomiSet();
+        printXiaomi(xiaomiList);
+        printSamsung(samsungMap);
         printPerson(personList);
         printIphone(iphoneList);
+    }
+
+    private Set<Phone> createXiaomiSet() {
+        Set<Phone> xiaomiList = new HashSet<>();
+        for (int i = 0; i < COUNT_OF_IPHONE; i++) {
+            Phone xiaomi = new Xiaomi(XIAOMI + random.nextInt(BOUND), PROCESSOR_NAME + random.nextInt(BOUND), random.nextInt(BOUND));
+            xiaomiList.add(xiaomi);
+            LOGGER.info(xiaomi + "*** all phone");
+        }
+        return xiaomiList;
     }
 
     private Map<Phone, Integer> createSamsungMap() {
         Map<Phone, Integer> samsungMap = new HashMap<>();
         for (int i = 0; i < COUNT_OF_IPHONE; i++) {
-            Phone samsung = new Samsung("Maxim" + random.nextInt(BOUND), "TracoPower" + random.nextInt(BOUND), random.nextInt(BOUND));
+            Phone samsung = new Samsung(SAMSUNG + random.nextInt(BOUND), PROCESSOR_NAME + random.nextInt(BOUND), random.nextInt(BOUND));
             samsungMap.put(samsung, i);
         }
         return samsungMap;
@@ -48,7 +62,7 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
         List<Iphone> iphoneList = new LinkedList<>();
         for (int i = 0; i < COUNT_OF_IPHONE; i++) {
             Iphone iphone = new Iphone();
-            iphone.setBattery(BATTERY_NAME + random.nextInt(BOUND));
+            iphone.setBattery(IPHONE + random.nextInt(BOUND));
             iphone.setProcessor(PROCESSOR_NAME + random.nextInt(BOUND));
             iphone.setColor(COLOR_ID + random.nextInt(BOUND));
             iphoneList.add(iphone);
@@ -88,10 +102,17 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
         }
     }
 
-    private void printSamsung(Map<Phone, Integer> samsungMap) {
-        for (Map.Entry<Phone, Integer> entry : samsungMap.entrySet()) {
-            LOGGER.info(entry.getKey() + " " + entry.getValue());
+    private void printXiaomi(Set<Phone> xiaomiSet) {
+        for (Phone xiaomi : xiaomiSet) {
+            LOGGER.info(xiaomi + "*** unique phone");
         }
+    }
+
+    private void printSamsung(Map<Phone, Integer> samsungMap) {
+        samsungMap.entrySet().stream()
+                .sorted(Map.Entry.<Phone, Integer>comparingByValue().reversed())
+                .forEach(LOGGER :: info);
+
     }
 }
 
