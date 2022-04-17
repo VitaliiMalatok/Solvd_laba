@@ -1,7 +1,6 @@
 package com.solvd.laba.service.impl;
 
-import com.solvd.laba.model.Iphone;
-import com.solvd.laba.model.Person;
+import com.solvd.laba.model.*;
 import com.solvd.laba.service.IRunSolvdLabaCollection;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +16,7 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
     private static final int MAX_AGE = 30;
     private static final int MIN_AGE = 15;
     private static final int BOUND = 9999;
-    private static final int COUNT_OF_IPHONE = 10;
+    private static final int COUNT_OF_IPHONE = 5;
     private static final String INFANT = "Infant: ";
     private static final String BATTERY_NAME = "TracoPower";
     private static final String PROCESSOR_NAME = "Intel";
@@ -28,13 +27,24 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
 
     @Override
     public void runSolvdLabaCollection() {
-        List<Person> personList = getPeople();
-        List<Iphone> iphoneList = getIphone();
+        List<Person> personList = createPersonList();
+        List<Iphone> iphoneList = createIphoneList();
+        Map<Phone, Integer> samsungIntegerMap = createSamsungMap();
+        printSamsung(samsungIntegerMap);
         printPerson(personList);
         printIphone(iphoneList);
     }
 
-    public List<Iphone> getIphone() {
+    private Map<Phone, Integer> createSamsungMap() {
+        Map<Phone, Integer> samsungMap = new HashMap<>();
+        for (int i = 0; i < COUNT_OF_IPHONE; i++) {
+            Phone samsung = new Samsung("Maxim" + random.nextInt(BOUND), "TracoPower" + random.nextInt(BOUND), random.nextInt(BOUND));
+            samsungMap.put(samsung, i);
+        }
+        return samsungMap;
+    }
+
+    public List<Iphone> createIphoneList() {
         List<Iphone> iphoneList = new LinkedList<>();
         for (int i = 0; i < COUNT_OF_IPHONE; i++) {
             Iphone iphone = new Iphone();
@@ -46,7 +56,7 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
         return iphoneList;
     }
 
-    private List<Person> getPeople() {
+    private List<Person> createPersonList() {
         List<Person> personList = new ArrayList<>();
         for (int i = 0; i < COUNT_OF_PERSON; i++) {
             Person person = new Person();
@@ -75,6 +85,12 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
     private void printIphone(List<Iphone> iphoneList) {
         for (Iphone iphone : iphoneList) {
             LOGGER.info(iphone);
+        }
+    }
+
+    private void printSamsung(Map<Phone, Integer> samsungMap) {
+        for (Map.Entry<Phone, Integer> entry : samsungMap.entrySet()) {
+            LOGGER.info(entry.getKey() + " " + entry.getValue());
         }
     }
 }
