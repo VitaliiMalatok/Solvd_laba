@@ -24,7 +24,7 @@ public class RunSolvdLabaBaseClassesImpl implements IRunSolvdLabaBaseClasses {
         Iphone iphone = new Iphone("SiliconLab", "Li-on", "Blue");
         Samsung samsung = new Samsung("Maxim", "TracoPower", WEIGHT);
         Xiaomi xiaomi = new Xiaomi("TexasInstr", "Li-pool", PRICE);
-        System.out.println(iphone + "\n" + samsung + "\n" + xiaomi);
+        LOGGER.info(iphone + "\n" + samsung + "\n" + xiaomi);
         samsung.sendMessage(PERSON);
         xiaomi.sendMessage(PERSON_NAME);
         iphone.getBalance(BALANCE);

@@ -3,24 +3,28 @@ package com.solvd.laba.service.impl;
 import com.solvd.laba.model.Iphone;
 import com.solvd.laba.model.Person;
 import com.solvd.laba.service.IRunSolvdLabaCollection;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
 public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
-    public static final String ADULT = "Adult: ";
+    private static final String ADULT = "Adult: ";
     private static final int AGE_MAX = 18;
     private static final int COUNT_OF_PERSON = 20;
     private static final String FIRST_NAME = "Vitali";
     private static final String SECOND_NAME = "Molotok";
-    public static final int MAX_AGE = 30;
-    public static final int MIN_AGE = 15;
-    public static final int BOUND = 9999;
-    public static final int COUNT_OF_IPHONE = 10;
-    public static final String INFANT = "Infant: ";
-    public static final String BATTERY_NAME = "TracoPower";
-    public static final String PROCESSOR_NAME = "Intel";
-    public static final String COLOR_ID = "Color ID: ";
+    private static final int MAX_AGE = 30;
+    private static final int MIN_AGE = 15;
+    private static final int BOUND = 9999;
+    private static final int COUNT_OF_IPHONE = 10;
+    private static final String INFANT = "Infant: ";
+    private static final String BATTERY_NAME = "TracoPower";
+    private static final String PROCESSOR_NAME = "Intel";
+    private static final String COLOR_ID = "Color ID: ";
     private Random random = new Random();
+    private static final Logger LOGGER = LogManager.getLogger(RunSolvdLabaCollectionImpl.class);
+
 
     @Override
     public void runSolvdLabaCollection() {
@@ -61,16 +65,16 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
     private void printPerson(List<Person> personList) {
         for (Person person : personList) {
             if (person.getAge() >= RunSolvdLabaCollectionImpl.AGE_MAX) {
-                System.out.println(ADULT + person);
+                LOGGER.info(ADULT + person);
             } else {
-                System.out.println(INFANT + person);
+                LOGGER.info(INFANT + person);
             }
         }
     }
 
     private void printIphone(List<Iphone> iphoneList) {
         for (Iphone iphone : iphoneList) {
-            System.out.println(iphone);
+            LOGGER.info(iphone);
         }
     }
 }

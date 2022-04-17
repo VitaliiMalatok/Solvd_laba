@@ -29,9 +29,8 @@ public class Iphone extends Phone implements IBalance, INetworkType {
         this.color = color;
     }
 
-
     public String getColor() throws IphoneColorException {
-        if (color != COLOR_OF_PHONE) {
+        if (!color.equals(COLOR_OF_PHONE)) {
             throw new IphoneColorException("This color is not true: " +
                     COLOR_OF_PHONE +
                     " Please chose default color");
@@ -45,7 +44,7 @@ public class Iphone extends Phone implements IBalance, INetworkType {
 
     @Override
     public void call(String person) throws IphoneCallException {
-        if (person != DEFAULT_USER_NAME) {
+        if (!person.equals(DEFAULT_USER_NAME)) {
             throw new IphoneCallException("Dear user this name: " +
                     person + " cannot be used when calling. Default name user: " +
                     DEFAULT_USER_NAME);

@@ -29,7 +29,7 @@ public class Samsung extends Phone implements IChargingTime {
 
     @Override
     public void call(String person) throws SamsungCallException {
-        if (person != DEFAULT_USER_NAME) {
+        if (!person.equals(DEFAULT_USER_NAME)) {
             throw new SamsungCallException("Dear user this name: " +
                     person + " cannot be used when calling. Default name user: " +
                     DEFAULT_USER_NAME);

@@ -9,10 +9,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class RunSolvdLabaExceptionImpl implements IRunSolvdLabaException {
-    private static final Logger LOGGER = LogManager.getLogger(RunSolvdLabaExceptionImpl.class);
     private static final int WEIGHT = -125;
     private static final int PRICE = 230;
     private static final String FIRST_NAME = "Vitalis";
+    private static final Logger LOGGER = LogManager.getLogger(RunSolvdLabaExceptionImpl.class);
 
     @Override
     public void runSolvdLabaException() {

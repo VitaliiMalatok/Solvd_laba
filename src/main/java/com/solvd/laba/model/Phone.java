@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public abstract class Phone {
-    private static final Logger LOGGER = LogManager.getLogger(Iphone.class);
+    private static final Logger LOGGER = LogManager.getLogger(Phone.class);
     private String processor;
     private String battery;
 
