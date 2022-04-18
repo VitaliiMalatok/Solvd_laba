@@ -1,9 +1,9 @@
-package com.solvd.laba.service.impl;
+package com.solvd.laba.home.task.impl;
 
 import com.solvd.laba.model.Iphone;
 import com.solvd.laba.model.Samsung;
 import com.solvd.laba.model.Xiaomi;
-import com.solvd.laba.service.IRunSolvdLabaBaseClasses;
+import com.solvd.laba.home.task.IRunSolvdLabaBaseClasses;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

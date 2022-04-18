@@ -1,7 +1,7 @@
-package com.solvd.laba.service.impl;
+package com.solvd.laba.home.task.impl;
 
 import com.solvd.laba.model.*;
-import com.solvd.laba.service.IRunSolvdLabaCollection;
+import com.solvd.laba.home.task.IRunSolvdLabaCollection;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
