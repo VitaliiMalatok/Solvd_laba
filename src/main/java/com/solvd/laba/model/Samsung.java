@@ -2,7 +2,7 @@ package com.solvd.laba.model;
 
 import com.solvd.laba.exception.SamsungCallException;
 import com.solvd.laba.exception.SamsungWightException;
-import com.solvd.laba.service.IChargingTime;
+import com.solvd.laba.model.service.IChargingTime;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

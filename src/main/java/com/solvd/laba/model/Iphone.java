@@ -2,8 +2,8 @@ package com.solvd.laba.model;
 
 import com.solvd.laba.exception.IphoneCallException;
 import com.solvd.laba.exception.IphoneColorException;
-import com.solvd.laba.service.IBalance;
-import com.solvd.laba.service.INetworkType;
+import com.solvd.laba.model.service.IBalance;
+import com.solvd.laba.model.service.INetworkType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

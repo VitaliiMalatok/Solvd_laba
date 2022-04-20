@@ -1,8 +1,8 @@
 package com.solvd.laba.model;
 
 import com.solvd.laba.exception.XiaomiPriceException;
-import com.solvd.laba.service.IRam;
-import com.solvd.laba.service.IScreenSize;
+import com.solvd.laba.model.service.IRam;
+import com.solvd.laba.model.service.IScreenSize;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

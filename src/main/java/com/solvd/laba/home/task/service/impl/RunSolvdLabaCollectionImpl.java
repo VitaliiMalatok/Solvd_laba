@@ -1,7 +1,7 @@
-package com.solvd.laba.home.task.impl;
+package com.solvd.laba.home.task.service.impl;
 
 import com.solvd.laba.model.*;
-import com.solvd.laba.home.task.IRunSolvdLabaCollection;
+import com.solvd.laba.home.task.service.IRunSolvdLabaCollection;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +23,7 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
     private static final String XIAOMI = "Xiaomi";
     private static final String SAMSUNG = "Samsung";
     private static final String IPHONE = "Iphone";
-    private Random random = new Random();
+    private final Random random = new Random();
     private static final Logger LOGGER = LogManager.getLogger(RunSolvdLabaCollectionImpl.class);
 
 
@@ -32,8 +32,8 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
         List<Person> personList = createPersonList();
         List<Iphone> iphoneList = createIphoneList();
         Map<Phone, Integer> samsungMap = createSamsungMap();
-        Set<Phone> xiaomiList = createXiaomiSet();
-        printXiaomi(xiaomiList);
+        Set<Phone> xiaomiSet = createXiaomiSet();
+        printXiaomi(xiaomiSet);
         printSamsung(samsungMap);
         printPerson(personList);
         printIphone(iphoneList);
@@ -112,7 +112,6 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
         samsungMap.entrySet().stream()
                 .sorted(Map.Entry.<Phone, Integer>comparingByValue().reversed())
                 .forEach(LOGGER :: info);
-
     }
 }
 

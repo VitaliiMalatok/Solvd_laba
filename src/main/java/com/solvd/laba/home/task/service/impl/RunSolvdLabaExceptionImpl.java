@@ -1,10 +1,10 @@
-package com.solvd.laba.home.task.impl;
+package com.solvd.laba.home.task.service.impl;
 
 import com.solvd.laba.exception.*;
 import com.solvd.laba.model.Iphone;
 import com.solvd.laba.model.Samsung;
 import com.solvd.laba.model.Xiaomi;
-import com.solvd.laba.home.task.IRunSolvdLabaException;
+import com.solvd.laba.home.task.service.IRunSolvdLabaException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
