@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
     private static final String ADULT = "Adult: ";
@@ -41,44 +42,41 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
 
     private Set<Phone> createXiaomiSet() {
         Set<Phone> xiaomiList = new HashSet<>();
-        for (int i = 0; i < COUNT_OF_IPHONE; i++) {
-            Phone xiaomi = new Xiaomi(XIAOMI + random.nextInt(BOUND), PROCESSOR_NAME + random.nextInt(BOUND), random.nextInt(BOUND));
+        IntStream.range(0, COUNT_OF_IPHONE).mapToObj(i -> new Xiaomi(XIAOMI + random.nextInt(BOUND), PROCESSOR_NAME + random.nextInt(BOUND), random.nextInt(BOUND))).forEach(xiaomi -> {
             xiaomiList.add(xiaomi);
             LOGGER.info(xiaomi + "*** all phone");
-        }
+        });
         return xiaomiList;
     }
 
     private Map<Phone, Integer> createSamsungMap() {
         Map<Phone, Integer> samsungMap = new HashMap<>();
-        for (int i = 0; i < COUNT_OF_IPHONE; i++) {
+        IntStream.range(0, COUNT_OF_IPHONE).forEach(i -> {
             Phone samsung = new Samsung(SAMSUNG + random.nextInt(BOUND), PROCESSOR_NAME + random.nextInt(BOUND), random.nextInt(BOUND));
             samsungMap.put(samsung, i);
-        }
+        });
         return samsungMap;
     }
 
     public List<Iphone> createIphoneList() {
         List<Iphone> iphoneList = new LinkedList<>();
-        for (int i = 0; i < COUNT_OF_IPHONE; i++) {
-            Iphone iphone = new Iphone();
+        IntStream.range(0, COUNT_OF_IPHONE).mapToObj(i -> new Iphone()).forEach(iphone -> {
             iphone.setBattery(IPHONE + random.nextInt(BOUND));
             iphone.setProcessor(PROCESSOR_NAME + random.nextInt(BOUND));
             iphone.setColor(COLOR_ID + random.nextInt(BOUND));
             iphoneList.add(iphone);
-        }
+        });
         return iphoneList;
     }
 
     private List<Person> createPersonList() {
         List<Person> personList = new ArrayList<>();
-        for (int i = 0; i < COUNT_OF_PERSON; i++) {
-            Person person = new Person();
+        IntStream.range(0, COUNT_OF_PERSON).mapToObj(i -> new Person()).forEach(person -> {
             person.setName(FIRST_NAME + random.nextInt(BOUND));
             person.setAge(randomGenerator(MAX_AGE, MIN_AGE));
             person.setSurname(SECOND_NAME + random.nextInt(BOUND));
             personList.add(person);
-        }
+        });
         return personList;
     }
 
@@ -87,25 +85,21 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
     }
 
     private void printPerson(List<Person> personList) {
-        for (Person person : personList) {
+        personList.forEach(person -> {
             if (person.getAge() >= RunSolvdLabaCollectionImpl.AGE_MAX) {
                 LOGGER.info(ADULT + person);
             } else {
                 LOGGER.info(INFANT + person);
             }
-        }
+        });
     }
 
     private void printIphone(List<Iphone> iphoneList) {
-        for (Iphone iphone : iphoneList) {
-            LOGGER.info(iphone);
-        }
+        iphoneList.forEach(LOGGER::info);
     }
 
     private void printXiaomi(Set<Phone> xiaomiSet) {
-        for (Phone xiaomi : xiaomiSet) {
-            LOGGER.info(xiaomi + "*** unique phone");
-        }
+        xiaomiSet.forEach(LOGGER::info);
     }
 
     private void printSamsung(Map<Phone, Integer> samsungMap) {

@@ -10,6 +10,12 @@ public class Person {
     public Person() {
     }
 
+    public Person(String name, String surname, int age) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
