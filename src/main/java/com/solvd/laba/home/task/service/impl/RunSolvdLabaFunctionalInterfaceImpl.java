@@ -11,10 +11,10 @@ public class RunSolvdLabaFunctionalInterfaceImpl implements IRunSolvdLabaFunctio
     private static final Logger LOGGER = LogManager.getLogger(RunSolvdLabaFunctionalInterfaceImpl.class);
     private static final String NAME = "Peter";
     private static final String SURNAME = "Parker";
-    public static final int FIRST_NUMBER = 5;
-    public static final int SECOND_NUMBER = -15;
-    public static final String TEST_VALUE = "6783333";
-    public static final int DIVIDED = 2;
+    private static final int FIRST_NUMBER = 5;
+    private static final int SECOND_NUMBER = -15;
+    private static final String TEST_VALUE = "6783333";
+    private static final int DIVIDED = 2;
 
     @Override
     public void runSolvdLabaFunctionalInterface() {

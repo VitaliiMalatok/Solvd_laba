@@ -17,7 +17,9 @@ class Main {
 //        solvdLabaEnums.runSolvdLabaEnums();
 //        IRunSolvdLabaFunctionalInterface solvdLabaFunctionalInterface = new RunSolvdLabaFunctionalInterfaceImpl();
 //        solvdLabaFunctionalInterface.runSolvdLabaFunctionalInterface();
-        IRunSolvdLabaThreads solvdLabaThreads = new RunSolvdLabaThreadsImpl();
-        solvdLabaThreads.runSolvdLabaThreads();
+//        IRunSolvdLabaThreads solvdLabaThreads = new RunSolvdLabaThreadsImpl();
+//        solvdLabaThreads.runSolvdLabaThreads();
+        IRunSolvdLabaReflection solvdLabaReflection = new RunSolvdLabaReflectionImpl();
+        solvdLabaReflection.runSolvdLabaReflection();
     }
 }
