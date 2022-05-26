@@ -3,7 +3,7 @@ package com.solvd.laba;
 import com.solvd.laba.home.task.service.*;
 import com.solvd.laba.home.task.service.impl.*;
 
-class Main {
+class PartOne {
     public static void main(String[] args) {
         IRunSolvdLabaBaseClasses solvdLabaBaseClasses = new RunSolvdLabaBaseClassesImpl();
         solvdLabaBaseClasses.runProjectBaseClasses();
