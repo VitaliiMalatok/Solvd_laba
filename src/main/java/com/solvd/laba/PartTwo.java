@@ -1,11 +1,21 @@
 package com.solvd.laba;
 
+import com.solvd.laba.dao.model.Customer;
 import com.solvd.laba.dao.service.impl.CustomerDAOImpl;
 import com.solvd.laba.dao.service.ICustomerDAO;
 
 public class PartTwo {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         ICustomerDAO customerDAO = new CustomerDAOImpl();
-        System.out.println(customerDAO.getEntityById(1));
+        Customer customer = new Customer("Solvd", "Vitali", "Molotok", "molotok.vitali@gmail.com", 210514, "BY Minsk Krasina str. 24");
+        Customer customer1 = new Customer("Solvd_laba", "Palina", "Kmit", "polina@gmail.com", 220130, "BY Minsk Radialinaia str. 63");
+//        customerDAO.saveEntity(customer);
+//        customerDAO.removeEntityById(8);
+        customer1.setId(10);
+        customerDAO.updateEntity(customer1);
+        System.out.println(customerDAO.getEntityById(10));
+        customerDAO.showAll();
+
+
     }
 }

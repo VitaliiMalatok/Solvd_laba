@@ -29,7 +29,7 @@ public class ConnectionPool {
             e.printStackTrace();
         }
         url = properties.getProperty("url");
-        user = properties.getProperty("username");
+        user = properties.getProperty("user");
         password = properties.getProperty("password");
     }
 
