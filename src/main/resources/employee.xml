@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FosterHome>
+    <Orphanage>Happy Days Daycare</Orphanage>
+    <Location>Apple Street</Location>
+    <Families>
+        <Family>
+            <ParentID>Adams</ParentID>
+            <ChildList>
+                <ChildID>Child1</ChildID>
+                <ChildID>Child2</ChildID>
+            </ChildList>
+        </Family>
+        <Family>
+            <ParentID>Adams</ParentID>
+            <ChildList>
+                <ChildID>Child3</ChildID>
+                <ChildID>Child4</ChildID>
+            </ChildList>
+        </Family>
+    </Families>
+    <RemainingChildList>
+        <ChildID>Child5</ChildID>
+        <ChildID>Child6</ChildID>
+    </RemainingChildList>
+</FosterHome>
