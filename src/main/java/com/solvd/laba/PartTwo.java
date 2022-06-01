@@ -11,9 +11,9 @@ public class PartTwo {
         Customer customer1 = new Customer("Solvd_laba", "Palina", "Kmit", "polina@gmail.com", 220130, "BY Minsk Radialinaia str. 63");
 //        customerDAO.saveEntity(customer);
 //        customerDAO.removeEntityById(8);
-        customer1.setId(10);
+        customer1.setId(1);
         customerDAO.updateEntity(customer1);
-        System.out.println(customerDAO.getEntityById(10));
+        System.out.println(customerDAO.getEntityById(1));
         customerDAO.showAll();
 
 
