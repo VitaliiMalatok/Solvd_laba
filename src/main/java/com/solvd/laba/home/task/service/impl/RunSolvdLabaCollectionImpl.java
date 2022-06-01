@@ -27,7 +27,6 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
     private final Random random = new Random();
     private static final Logger LOGGER = LogManager.getLogger(RunSolvdLabaCollectionImpl.class);
 
-
     @Override
     public void runSolvdLabaCollection() {
         List<Person> personList = createPersonList();
