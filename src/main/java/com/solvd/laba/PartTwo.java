@@ -15,15 +15,12 @@ public class PartTwo {
 //        customerDAO.updateEntity(customer1);
 //        System.out.println(customerDAO.getEntityById(1));
 //        customerDAO.showAll();
-//        IAirDeliveryDAO iAirDeliveryDAO = new AirDeliveryDAOImpl();
-//        iAirDeliveryDAO.showAll();
-//        IClientOrderDAO iClientOrderDAO = new ClientOrderDAOImpl();
-//        iClientOrderDAO.showAll();
-//        IDeliveryManDAO iDeliveryManDAO = new DeliveryManDAOImpl();
-//        iDeliveryManDAO.showAll();
+        IAirDeliveryDAO iAirDeliveryDAO = new AirDeliveryDAOImpl();
+        iAirDeliveryDAO.showAll();
+        IClientOrderDAO iClientOrderDAO = new ClientOrderDAOImpl();
+        iClientOrderDAO.showAll();
+        IDeliveryManDAO iDeliveryManDAO = new DeliveryManDAOImpl();
+        iDeliveryManDAO.showAll();
         IInternationalDeliveryDAO iInternationalDeliveryDAO = new InternationalDeliveryDAOImpl();
-        iInternationalDeliveryDAO.showAll();
-
-
-    }
+        iInternationalDeliveryDAO.showAll();    }
 }
