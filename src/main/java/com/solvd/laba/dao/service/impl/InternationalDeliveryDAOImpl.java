@@ -1,6 +1,6 @@
 package com.solvd.laba.dao.service.impl;
 
-import com.solvd.laba.dao.model.DeliveryMan;
+import com.solvd.laba.dao.model.ClientOrder;
 import com.solvd.laba.dao.model.InternationalDelivery;
 import com.solvd.laba.dao.service.IInternationalDeliveryDAO;
 import com.solvd.laba.dao.utils.ConnectionPool;
@@ -21,7 +21,7 @@ public class InternationalDeliveryDAOImpl implements IInternationalDeliveryDAO {
     private ResultSet resultSet = null;
     @Override
     public InternationalDelivery getEntityById(int id) {
-        return null;
+        return internationalDelivery;
     }
 
     @Override

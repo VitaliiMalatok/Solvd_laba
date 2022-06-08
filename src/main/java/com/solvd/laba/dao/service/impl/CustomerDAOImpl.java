@@ -1,16 +1,14 @@
 package com.solvd.laba.dao.service.impl;
 
 
+import com.solvd.laba.dao.model.ClientOrder;
 import com.solvd.laba.dao.model.Customer;
 import com.solvd.laba.dao.service.ICustomerDAO;
 import com.solvd.laba.dao.utils.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.sql.*;
-import java.util.Properties;
 
 public class CustomerDAOImpl implements ICustomerDAO {
     private static final Logger LOGGER = LogManager.getLogger(CustomerDAOImpl.class);

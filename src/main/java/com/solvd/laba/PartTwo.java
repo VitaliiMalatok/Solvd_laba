@@ -1,5 +1,6 @@
 package com.solvd.laba;
 
+import com.solvd.laba.dao.model.AirDelivery;
 import com.solvd.laba.dao.model.Customer;
 import com.solvd.laba.dao.service.*;
 import com.solvd.laba.dao.service.impl.*;
@@ -15,12 +16,27 @@ public class PartTwo {
 //        customerDAO.updateEntity(customer1);
 //        System.out.println(customerDAO.getEntityById(1));
 //        customerDAO.showAll();
-        IAirDeliveryDAO iAirDeliveryDAO = new AirDeliveryDAOImpl();
-        iAirDeliveryDAO.showAll();
+//        IAirDeliveryDAO iAirDeliveryDAO = new AirDeliveryDAOImpl();
+//        iAirDeliveryDAO.showAll();
+//        System.out.println(iAirDeliveryDAO.getEntityById(13));
+//        AirDelivery airDelivery1 = new AirDelivery("GB", "AirBus");
+//        AirDelivery airDelivery2 = new AirDelivery("GB update", "AirBus update");
+//        iAirDeliveryDAO.saveEntity(airDelivery1);
+//        System.out.println(iAirDeliveryDAO.getEntityById(14));
+//        airDelivery2.setId(14);
+//        iAirDeliveryDAO.updateEntity(airDelivery2);
+//        System.out.println(iAirDeliveryDAO.getEntityById(14));
+//        iAirDeliveryDAO.removeEntityById(15);
+
+
+
         IClientOrderDAO iClientOrderDAO = new ClientOrderDAOImpl();
-        iClientOrderDAO.showAll();
-        IDeliveryManDAO iDeliveryManDAO = new DeliveryManDAOImpl();
-        iDeliveryManDAO.showAll();
-        IInternationalDeliveryDAO iInternationalDeliveryDAO = new InternationalDeliveryDAOImpl();
-        iInternationalDeliveryDAO.showAll();    }
+//        iClientOrderDAO.showAll();
+        System.out.println(iClientOrderDAO.getEntityById(33));
+
+//        IDeliveryManDAO iDeliveryManDAO = new DeliveryManDAOImpl();
+//        iDeliveryManDAO.showAll();
+//        IInternationalDeliveryDAO iInternationalDeliveryDAO = new InternationalDeliveryDAOImpl();
+//        iInternationalDeliveryDAO.showAll();
+    }
 }

@@ -1,8 +1,6 @@
 package com.solvd.laba.dao.service.impl;
 
-import com.solvd.laba.dao.model.AirDelivery;
 import com.solvd.laba.dao.model.ClientOrder;
-import com.solvd.laba.dao.model.Customer;
 import com.solvd.laba.dao.service.IClientOrderDAO;
 import com.solvd.laba.dao.utils.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
@@ -20,18 +18,46 @@ public class ClientOrderDAOImpl implements IClientOrderDAO {
     private Connection connection;
     private PreparedStatement pr = null;
     private ResultSet resultSet = null;
+
     @Override
-    public Customer getEntityById(int id) {
-        return null;
+    public ClientOrder getEntityById(int id) {
+        try {
+            connection = connectionPool.retrieve();
+            pr = connection.prepareStatement("Select * from client_orders where id=?");
+            pr.setInt(1, id);
+            pr.execute();
+            resultSet = pr.getResultSet();
+            while (resultSet.next()) {
+                clientOrder.setId(resultSet.getInt("id"));
+                clientOrder.setCustomerId(resultSet.getInt("castomer_id"));
+                clientOrder.setDeliveryDate(resultSet.getString("delivery_date"));
+                clientOrder.setDeliveryId(resultSet.getInt("delivery_id"));
+                clientOrder.setFormOfPayment(resultSet.getString("form_of_payment"));
+                clientOrder.setInternationalDeliveryId(resultSet.getInt("international_delivery_id"));
+                clientOrder.setOrderDate(resultSet.getString("order_date"));
+                clientOrder.setProductCodeId(resultSet.getInt("product_code_id"));
+            }
+        } catch (SQLException e) {
+            LOGGER.info(e);
+        } finally {
+            try {
+                if (connection != null) connectionPool.putback(connection);
+                if (resultSet != null) resultSet.close();
+                if (pr != null) pr.close();
+            } catch (SQLException e) {
+                LOGGER.info(e);
+            }
+        }
+        return clientOrder;
     }
 
     @Override
-    public void saveEntity(Customer entity) {
+    public void saveEntity(ClientOrder entity) {
 
     }
 
     @Override
-    public void updateEntity(Customer entity) {
+    public void updateEntity(ClientOrder entity) {
 
     }
 

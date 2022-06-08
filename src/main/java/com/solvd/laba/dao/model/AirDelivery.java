@@ -5,14 +5,14 @@ import java.util.Objects;
 public class AirDelivery {
     private int id;
     private String country;
-    private String name_of_airplane;
+    private String nameOfAirplane;
 
     public AirDelivery() {
     }
 
-    public AirDelivery(String country, String name_of_airplane) {
+    public AirDelivery(String country, String nameOfAirplane) {
         this.country = country;
-        this.name_of_airplane = name_of_airplane;
+        this.nameOfAirplane = nameOfAirplane;
     }
 
     public int getId() {
@@ -31,12 +31,12 @@ public class AirDelivery {
         this.country = country;
     }
 
-    public String getName_of_airplane() {
-        return name_of_airplane;
+    public String getNameOfAirplane() {
+        return nameOfAirplane;
     }
 
-    public void setName_of_airplane(String name_of_airplane) {
-        this.name_of_airplane = name_of_airplane;
+    public void setNameOfAirplane(String nameOfAirplane) {
+        this.nameOfAirplane = nameOfAirplane;
     }
 
     @Override
@@ -44,12 +44,12 @@ public class AirDelivery {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AirDelivery that = (AirDelivery) o;
-        return id == that.id && Objects.equals(country, that.country) && Objects.equals(name_of_airplane, that.name_of_airplane);
+        return id == that.id && Objects.equals(country, that.country) && Objects.equals(nameOfAirplane, that.nameOfAirplane);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, country, name_of_airplane);
+        return Objects.hash(id, country, nameOfAirplane);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class AirDelivery {
         return "AirDelivery{" +
                 "id=" + id +
                 ", country='" + country + '\'' +
-                ", name_of_airplane='" + name_of_airplane + '\'' +
+                ", name_of_airplane='" + nameOfAirplane + '\'' +
                 '}';
     }
 }

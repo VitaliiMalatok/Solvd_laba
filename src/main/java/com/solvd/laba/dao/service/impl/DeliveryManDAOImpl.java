@@ -1,6 +1,6 @@
 package com.solvd.laba.dao.service.impl;
 
-import com.solvd.laba.dao.model.AirDelivery;
+import com.solvd.laba.dao.model.ClientOrder;
 import com.solvd.laba.dao.model.DeliveryMan;
 import com.solvd.laba.dao.service.IDeliveryManDAO;
 import com.solvd.laba.dao.utils.ConnectionPool;
@@ -22,7 +22,7 @@ public class DeliveryManDAOImpl implements IDeliveryManDAO {
 
     @Override
     public DeliveryMan getEntityById(int id) {
-        return null;
+        return deliveryMan;
     }
 
     @Override
