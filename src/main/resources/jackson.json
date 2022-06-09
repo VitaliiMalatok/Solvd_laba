@@ -1,0 +1,79 @@
+[ {
+  "id" : 0,
+  "name" : "Iphone 13",
+  "imei" : 8746387659,
+  "year" : 2021,
+  "price" : 1050,
+  "mobileStore" : {
+    "name" : "Apple Store",
+    "address" : "Lenin Street 13",
+    "id" : 0
+  },
+  "specification" : {
+    "id" : 0,
+    "processor" : {
+      "name" : "Bionic",
+      "frequency" : "3.2",
+      "noc" : 6,
+      "id" : 0
+    },
+    "display" : {
+      "manufacture" : "Samsung",
+      "type" : "OLED",
+      "inch" : 6.0,
+      "price" : 110,
+      "id" : 0
+    },
+    "battery" : {
+      "manufacturer" : "Apple",
+      "capacity" : 4300,
+      "price" : 40,
+      "id" : 0
+    },
+    "memory" : {
+      "name" : "Apple",
+      "capacity" : 256,
+      "price" : 55,
+      "id" : 0
+    }
+  }
+}, {
+  "id" : 0,
+  "name" : "Samsung S21",
+  "imei" : 1246387659,
+  "year" : 2022,
+  "price" : 1150,
+  "mobileStore" : {
+    "name" : "Svyaznoy",
+    "address" : "Zaslavskaya Street 11",
+    "id" : 0
+  },
+  "specification" : {
+    "id" : 0,
+    "processor" : {
+      "name" : "Exynos",
+      "frequency" : "3.3",
+      "noc" : 6,
+      "id" : 0
+    },
+    "display" : {
+      "manufacture" : "Samsung",
+      "type" : "OLED",
+      "inch" : 6.3,
+      "price" : 150,
+      "id" : 0
+    },
+    "battery" : {
+      "manufacturer" : "Samsung",
+      "capacity" : 3700,
+      "price" : 50,
+      "id" : 0
+    },
+    "memory" : {
+      "name" : "Samsung",
+      "capacity" : 256,
+      "price" : 44,
+      "id" : 0
+    }
+  }
+} ]

@@ -1,4 +1,4 @@
-package com.solvd.laba;
+package com.solvd.laba.xml.parser.sax.model;
 
 import com.solvd.laba.xml.parser.sax.model.Employee;
 import org.xml.sax.Attributes;

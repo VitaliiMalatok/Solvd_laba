@@ -5,6 +5,7 @@ import com.solvd.laba.home.task.service.impl.*;
 
 class PartOne {
     public static void main(String[] args) {
+
         IRunSolvdLabaBaseClasses solvdLabaBaseClasses = new RunSolvdLabaBaseClassesImpl();
         solvdLabaBaseClasses.runProjectBaseClasses();
         IRunSolvdLabaException solvdLabaException = new RunSolvdLabaExceptionImpl();

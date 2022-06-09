@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mobile_phone id="0">
+    <name>Samsung S22</name>
+    <imei>1234431344</imei>
+    <year>2022</year>
+    <price>1300</price>
+    <mobileStore>
+        <id>0</id>
+        <name>TELE2</name>
+        <address>6 Vera Khoruzhey Street</address>
+    </mobileStore>
+    <specification id="0">
+        <processor>
+            <name>Exynos</name>
+            <frequency>1.8 - 3.2</frequency>
+            <noc>6</noc>
+        </processor>
+        <display>
+            <id>0</id>
+            <manufacture>Samsung</manufacture>
+            <type>OLED</type>
+            <inch>6.1</inch>
+            <price>110</price>
+        </display>
+        <battery>
+            <id>0</id>
+            <name>Samsung</name>
+            <capacity>3450</capacity>
+            <price>27</price>
+        </battery>
+        <memory>
+            <id>0</id>
+            <name>SamDc</name>
+            <capacity>256</capacity>
+            <price>55</price>
+        </memory>
+    </specification>
+</mobile_phone>

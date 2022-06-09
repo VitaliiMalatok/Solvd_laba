@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<mobile_phones>
+    <mobile_phone mpId="01">
+        <name>Iphone 13</name>
+        <year>2021</year>
+        <imei>8746387659</imei>
+        <price>1050</price>
+        <mobile_store>
+            <name>Apple Store</name>
+            <address>Lenin Street 13</address>
+        </mobile_store>
+        <specification>
+            <battery>
+                <manufacturer>Apple</manufacturer>
+                <capacity>4300</capacity>
+                <price>40</price>
+            </battery>
+            <memory>
+                <manufacturer>Apple</manufacturer>
+                <capacity>256</capacity>
+                <price>55</price>
+            </memory>
+            <display>
+                <manufacturer>Samsung</manufacturer>
+                <type>OLED</type>
+                <inch>6</inch>
+                <price>110</price>
+            </display>
+            <processor>
+                <name>Bionic</name>
+                <frequency>3.2</frequency>
+                <number_of_cores>6</number_of_cores>
+            </processor>
+        </specification>
+    </mobile_phone>
+    <mobile_phone mpId="02">
+        <name>Samsung S21</name>
+        <year>2022</year>
+        <imei>1246387659</imei>
+        <price>1150</price>
+        <mobile_store>
+            <name>Svyaznoy</name>
+            <address>Zaslavskaya Street 11</address>
+        </mobile_store>
+        <specification>
+            <battery>
+                <manufacturer>Samsung</manufacturer>
+                <capacity>3700</capacity>
+                <price>50</price>
+            </battery>
+            <memory>
+                <manufacturer>Samsung</manufacturer>
+                <capacity>256</capacity>
+                <price>44</price>
+            </memory>
+            <display>
+                <manufacturer>Samsung</manufacturer>
+                <type>OLED</type>
+                <inch>6.3</inch>
+                <price>150</price>
+            </display>
+            <processor>
+                <name>Exynos</name>
+                <frequency>3.3</frequency>
+                <number_of_cores>6</number_of_cores>
+            </processor>
+        </specification>
+    </mobile_phone>
+</mobile_phones>

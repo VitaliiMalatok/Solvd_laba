@@ -1,4 +1,4 @@
-package com.solvd.laba;
+package com.solvd.laba.xml.parser.jaxb.model;
 
 import com.solvd.laba.xml.parser.jaxb.model.FosterHome;
 import jakarta.xml.bind.JAXBContext;

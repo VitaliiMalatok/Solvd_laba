@@ -2,7 +2,7 @@ package com.solvd.laba.dao.service.impl;
 
 import com.solvd.laba.dao.model.Customer;
 import com.solvd.laba.dao.service.ICustomerDAO;
-import com.solvd.laba.dao.utils.ConnectionPool;
+import com.solvd.laba.dao.connection.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
