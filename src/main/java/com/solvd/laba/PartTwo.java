@@ -1,7 +1,9 @@
 package com.solvd.laba;
 
 import com.solvd.laba.dao.model.AirDelivery;
+import com.solvd.laba.dao.model.ClientOrder;
 import com.solvd.laba.dao.model.Customer;
+import com.solvd.laba.dao.model.DeliveryMan;
 import com.solvd.laba.dao.service.*;
 import com.solvd.laba.dao.service.impl.*;
 
@@ -28,14 +30,29 @@ public class PartTwo {
 //        System.out.println(iAirDeliveryDAO.getEntityById(14));
 //        iAirDeliveryDAO.removeEntityById(15);
 
-
-
-        IClientOrderDAO iClientOrderDAO = new ClientOrderDAOImpl();
+//        IClientOrderDAO iClientOrderDAO = new ClientOrderDAOImpl();
 //        iClientOrderDAO.showAll();
-        System.out.println(iClientOrderDAO.getEntityById(33));
+//        System.out.println(iClientOrderDAO.getEntityById(33));
+//
+//        ClientOrder clientOrder1 = new ClientOrder(1, "11/11/2011", 1, "card", 1, "12/12/2012", 1);
+//        ClientOrder clientOrder2 = new ClientOrder(1, "11/11/2011 update", 1, "card update", 1, "12/12/2012 update", 1);
+//        iClientOrderDAO.saveEntity(clientOrder1);
+//        System.out.println(iClientOrderDAO.getEntityById(35));
+//        clientOrder2.setId(35);
+//        iClientOrderDAO.updateEntity(clientOrder2);
+//        System.out.println(iClientOrderDAO.getEntityById(35));
 
-//        IDeliveryManDAO iDeliveryManDAO = new DeliveryManDAOImpl();
+
+
+        IDeliveryManDAO iDeliveryManDAO = new DeliveryManDAOImpl();
 //        iDeliveryManDAO.showAll();
+        System.out.println(iDeliveryManDAO.getEntityById(30));
+        DeliveryMan deliveryMan1 = new DeliveryMan(1,"Pavel", "Black");
+        DeliveryMan deliveryMan2 = new DeliveryMan(1,"Pavel update", "Black update");
+        iDeliveryManDAO.saveEntity(deliveryMan1);
+        deliveryMan2.setId(31);
+        iDeliveryManDAO.updateEntity(deliveryMan2);
+        System.out.println(iDeliveryManDAO.getEntityById(31));
 //        IInternationalDeliveryDAO iInternationalDeliveryDAO = new InternationalDeliveryDAOImpl();
 //        iInternationalDeliveryDAO.showAll();
     }

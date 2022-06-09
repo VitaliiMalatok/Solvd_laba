@@ -53,17 +53,72 @@ public class ClientOrderDAOImpl implements IClientOrderDAO {
 
     @Override
     public void saveEntity(ClientOrder entity) {
-
+        try {
+            connection = connectionPool.retrieve();
+            pr = connection.prepareStatement("Insert into client_orders (castomer_id, delivery_date, delivery_id, form_of_payment, international_delivery_id, order_date, product_code_id) Values (?,?,?,?,?,?,?)");
+            pr.setInt(1, entity.getCustomerId());
+            pr.setString(2, entity.getDeliveryDate());
+            pr.setInt(3, entity.getDeliveryId());
+            pr.setString(4, entity.getFormOfPayment());
+            pr.setInt(5, entity.getInternationalDeliveryId());
+            pr.setString(6, entity.getOrderDate());
+            pr.setInt(7, entity.getProductCodeId());
+            pr.executeUpdate();
+        } catch (SQLException e) {
+            LOGGER.info(e);
+        } finally {
+            try {
+                if (connection != null) connectionPool.putback(connection);
+                if (pr != null) pr.close();
+            } catch (SQLException e) {
+                LOGGER.info(e);
+            }
+        }
     }
 
     @Override
     public void updateEntity(ClientOrder entity) {
-
+        try {
+            connection = connectionPool.retrieve();
+            pr = connection.prepareStatement("Update client_orders Set castomer_id=?, delivery_date=?, delivery_id=?, form_of_payment=?, international_delivery_id=?, order_date=?, product_code_id=? where id=?");
+            pr.setInt(1, entity.getCustomerId());
+            pr.setString(2, entity.getDeliveryDate());
+            pr.setInt(3, entity.getDeliveryId());
+            pr.setString(4, entity.getFormOfPayment());
+            pr.setInt(5, entity.getInternationalDeliveryId());
+            pr.setString(6, entity.getOrderDate());
+            pr.setInt(7, entity.getProductCodeId());
+            pr.setInt(8, entity.getId());
+            pr.executeUpdate();
+        } catch (SQLException e) {
+            LOGGER.info(e);
+        } finally {
+            try {
+                if (connection != null) connectionPool.putback(connection);
+                if (pr != null) pr.close();
+            } catch (SQLException e) {
+                LOGGER.info(e);
+            }
+        }
     }
 
     @Override
     public void removeEntityById(int id) {
-
+        try {
+            connection = connectionPool.retrieve();
+            pr = connection.prepareStatement("Delete from client_orders where id=?");
+            pr.setInt(1, id);
+            pr.executeUpdate();
+        } catch (SQLException e) {
+            LOGGER.info(e);
+        } finally {
+            try {
+                if (connection != null) connectionPool.putback(connection);
+                if (pr != null) pr.close();
+            } catch (SQLException e) {
+                LOGGER.info(e);
+            }
+        }
     }
 
     @Override

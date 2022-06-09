@@ -22,22 +22,92 @@ public class DeliveryManDAOImpl implements IDeliveryManDAO {
 
     @Override
     public DeliveryMan getEntityById(int id) {
+        try {
+            connection = connectionPool.retrieve();
+            pr = connection.prepareStatement("Select * from deliverymans where id=?");
+            pr.setInt(1, id);
+            pr.execute();
+            resultSet = pr.getResultSet();
+            while (resultSet.next()) {
+                deliveryMan.setId(resultSet.getInt("id"));
+                deliveryMan.setAge(resultSet.getInt("age"));
+                deliveryMan.setFirstName(resultSet.getString("first_name"));
+                deliveryMan.setLastName(resultSet.getString("last_name"));
+            }
+        } catch (SQLException e) {
+            LOGGER.info(e);
+        } finally {
+            try {
+                if (connection != null) connectionPool.putback(connection);
+                if (resultSet != null) resultSet.close();
+                if (pr != null) pr.close();
+            } catch (SQLException e) {
+                LOGGER.info(e);
+            }
+        }
         return deliveryMan;
     }
 
     @Override
     public void saveEntity(DeliveryMan entity) {
-
+        try {
+            connection = connectionPool.retrieve();
+            pr = connection.prepareStatement("Insert into deliverymans (age, first_name, last_name) Values (?,?,?)");
+            pr.setInt(1, entity.getAge());
+            pr.setString(2, entity.getFirstName());
+            pr.setString(3, entity.getLastName());
+            pr.executeUpdate();
+        } catch (SQLException e) {
+            LOGGER.info(e);
+        } finally {
+            try {
+                if (connection != null) connectionPool.putback(connection);
+                if (pr != null) pr.close();
+            } catch (SQLException e) {
+                LOGGER.info(e);
+            }
+        }
     }
 
     @Override
     public void updateEntity(DeliveryMan entity) {
-
+        try {
+            connection = connectionPool.retrieve();
+            pr = connection.prepareStatement("Update deliverymans Set age=?, first_name=?, last_name=? where id=?");
+            pr.setInt(1, entity.getAge());
+            pr.setString(2, entity.getFirstName());
+            pr.setString(3, entity.getLastName());
+            pr.setInt(4, entity.getId());
+            pr.executeUpdate();
+        } catch (SQLException e) {
+            LOGGER.info(e);
+        } finally {
+            try {
+                if (connection != null) connectionPool.putback(connection);
+                if (pr != null) pr.close();
+            } catch (SQLException e) {
+                LOGGER.info(e);
+            }
+        }
     }
 
     @Override
     public void removeEntityById(int id) {
-
+        try {
+            connection = connectionPool.retrieve();
+            pr = connection.prepareStatement("Delete from deliverymans where id=?");
+            pr.setInt(1, id);
+            pr.executeUpdate();
+        } catch (SQLException e) {
+            LOGGER.info(e);
+        } finally {
+            try {
+                if (connection != null) connectionPool.putback(connection);
+                if (pr != null) pr.close();
+            } catch (SQLException e) {
+                LOGGER.info(e);
+            }
+        }
     }
 
     @Override
