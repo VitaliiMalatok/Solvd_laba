@@ -59,12 +59,14 @@ public class RunSolvdLabaCollectionImpl implements IRunSolvdLabaCollection {
 
     public List<Iphone> createIphoneList() {
         List<Iphone> iphoneList = new LinkedList<>();
-        IntStream.range(0, COUNT_OF_IPHONE).mapToObj(i -> new Iphone()).forEach(iphone -> {
+        int bound = COUNT_OF_IPHONE;
+        for (int i = 0; i < bound; i++) {
+             Iphone iphone = new Iphone();
             iphone.setBattery(IPHONE + random.nextInt(BOUND));
             iphone.setProcessor(PROCESSOR_NAME + random.nextInt(BOUND));
             iphone.setColor(COLOR_ID + random.nextInt(BOUND));
             iphoneList.add(iphone);
-        });
+        }
         return iphoneList;
     }
 
